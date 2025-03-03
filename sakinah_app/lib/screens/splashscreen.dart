@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sakinah_app/constants/constant.dart';
 import 'package:sakinah_app/helper/navigation.dart';
-import 'package:sakinah_app/screens/signin.dart';
+import 'package:sakinah_app/screens/app_intro/onboarding.dart';
 //import 'package:get/get.dart';
 
 
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual);
     Future.delayed(const Duration(seconds: 6), () {
-      changeScreenReplacement(context,  SignInScreen());
+      changeScreenReplacement(context,  OnboardingScreen());
       //Get.to(const SignInScreen());
       
     });
