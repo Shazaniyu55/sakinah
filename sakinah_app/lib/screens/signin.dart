@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sakinah_app/constants/constant.dart';
+import 'package:sakinah_app/helper/navigation.dart';
+import 'package:sakinah_app/screens/phone_number.dart';
 import 'package:sakinah_app/widget/bottomRectangularbtn.dart';
 
 
@@ -36,7 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 BottomRectangularBtn(onTapFunc: ()=>{}, btnTitle: "Continue with email"),
          const SizedBox(height: 20,),
         
-                BottomRectangularBtn(onTapFunc: ()=>{}, btnTitle: "Use phone number", color: Colors.white, buttonTextColor: COLOR_CUSTOM,),
+                BottomRectangularBtn(onTapFunc: ()=>{changeScreen(context, PhoneAuthScreen())}, btnTitle: "Use phone number", color: Colors.white, buttonTextColor: COLOR_CUSTOM,),
         const SizedBox(height: 30,),
         
                 Row(
