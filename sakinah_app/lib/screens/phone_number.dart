@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sakinah_app/constants/constant.dart';
 import 'package:sakinah_app/controller/auth.dart';
 import 'package:sakinah_app/helper/navigation.dart';
-import 'package:sakinah_app/screens/dashboard.dart';
 import 'package:sakinah_app/screens/profile_details.dart';
 
 

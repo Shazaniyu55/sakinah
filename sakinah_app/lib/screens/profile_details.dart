@@ -1,8 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api, deprecated_member_use
 
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 
 
@@ -14,17 +15,19 @@ class ProfileDetailsScreen extends StatefulWidget {
 }
 
 class _ProfileDetailsScreenState extends State<ProfileDetailsScreen> {
-  File? _image;
+
+  Uint8List? _image;
+
   final picker = ImagePicker();
   final TextEditingController _firstNameController = TextEditingController(text: "David");
   final TextEditingController _lastNameController = TextEditingController(text: "Peterson");
   String _selectedDate = "Choose birthday date";
 
   Future<void> _pickImage() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    Uint8List? pickedFile = (await picker.pickImage(source: ImageSource.gallery)) as Uint8List?;
     if (pickedFile != null) {
       setState(() {
-        _image = File(pickedFile.path);
+        _image = pickedFile;
       });
     }
   }
@@ -86,7 +89,7 @@ class _ProfileDetailsScreenState extends State<ProfileDetailsScreen> {
       children: [
         CircleAvatar(
           radius: 50,
-          backgroundImage: _image != null ? FileImage(_image!) : AssetImage("images/avatarman.png") as ImageProvider,
+          backgroundImage: _image != null ? MemoryImage(_image!) : AssetImage("images/avatarman.png") as ImageProvider,
         ),
         InkWell(
           onTap: _pickImage,

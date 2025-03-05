@@ -12,7 +12,20 @@
           "package_name": "com.example.sakinah_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1061299533194-tuksvcgmlullleq1heqibkvp0tulie8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sakinah_app",
+            "certificate_hash": "8de8be0d3c4c32cf410102f3e4221e6b13cc6ecf"
+          }
+        },
+        {
+          "client_id": "1061299533194-1i67qas3vtptpv6pl6qbhe9m257a7uju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB2LVkXfARYeiKMmMbrClczuNFTRl5purQ"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061299533194-1i67qas3vtptpv6pl6qbhe9m257a7uju.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1061299533194-s3cg29pr0hjkopearjr406bb07ek56v2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sakinahApp"
+              }
+            }
+          ]
         }
       }
     }

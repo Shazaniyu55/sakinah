@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sakinah_app/constants/constant.dart';
+import 'package:sakinah_app/controller/auth.dart';
 import 'package:sakinah_app/helper/navigation.dart';
 import 'package:sakinah_app/screens/phone_number.dart';
 import 'package:sakinah_app/widget/bottomRectangularbtn.dart';
-
 
 
 class SignInScreen extends StatefulWidget {
@@ -14,6 +16,18 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+
+void handleGoogleSignIn() async {
+  UserCredential? userCredential = await AuthService.signInWithGoogle();
+  if (userCredential != null) {
+    print("Google Sign-In Successful: ${userCredential.user?.displayName}");
+  } else {
+    print("Google Sign-In Failed");
+  }
+}
+
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -35,7 +49,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   const SizedBox(height: 70,),
                   Text("Sign Up To Continue"),
                   const SizedBox(height: 20,),
-                BottomRectangularBtn(onTapFunc: ()=>{}, btnTitle: "Continue with email"),
+  
+                // BottomRectangularBtn(onTapFunc: ()=>{
+                //   handleGoogleSignIn()
+                // }, btnTitle: "Continue with email"),
          const SizedBox(height: 20,),
         
                 BottomRectangularBtn(onTapFunc: ()=>{changeScreen(context, PhoneAuthScreen())}, btnTitle: "Use phone number", color: Colors.white, buttonTextColor: COLOR_CUSTOM,),
